@@ -19,8 +19,8 @@
 #
 ---
   include:
-   - board: nrf52840dk/nrf52840
+   - board: nrfmicro/nrf52840/zmk
      shield: corne_left
-   - board: nrf52840dk/nrf52840
+   - board: nrfmicro/nrf52840/zmk
      shield: corne_right
 
