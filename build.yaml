@@ -7,8 +7,7 @@
 include:
   - board: nice_nano@2.0.0
     shield: corne_left
+    snippet: zmk-usb-logging
   - board: nice_nano@2.0.0
     shield: corne_right
-  # Handy for un-pairing/resetting BLE bonds on the host-connected (central) half
-  - board: nice_nano@2.0.0
-    shield: settings_reset
+    snippet: zmk-usb-logging
