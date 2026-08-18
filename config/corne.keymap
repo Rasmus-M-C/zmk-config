@@ -35,7 +35,7 @@
             // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M  |  ,   |  .  |  /   | SHFT  |
             //               | GUI | LWR | SPC |   | RET | RSE | ALT |
             // -----------------------------------------------------------------------------------
-            bindings = <
+            bindings = 
 &kp TAB    &kp Q &kp W &kp E &kp R &kp T     &kp Y &kp U &kp I     &kp O   &kp P    &kp BSPC
 &kp LCTRL  &kp A &kp S &kp D &kp F &kp G     &kp H &kp J &kp K     &kp L   &kp SEMI &kp SQT
 &kp LSHFT  &kp Z &kp X &kp C &kp V &kp B     &kp N &kp M &kp COMMA &kp DOT &kp FSLH &kp RSHFT
@@ -49,7 +49,7 @@
             // |  __  |  F1 |  F2 |  F3 |  F4 |  F5 |   | LFT | DWN |  UP  | RGT |  __  |  __   |
             // |  __  |  F6 |  F7 |  F8 |  F9 | F10 |   |  __ |  __ |  __  |  __ |  __  |  __   |
             // -----------------------------------------------------------------------------------
-            bindings = <
+            bindings = 
 &kp ESC   &kp N1 &kp N2 &kp N3 &kp N4 &kp N5    &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp DEL
 &trans    &kp F1 &kp F2 &kp F3 &kp F4 &kp F5    &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
 &trans    &kp F6 &kp F7 &kp F8 &kp F9 &kp F10   &trans   &trans   &trans &trans    &trans &trans
@@ -63,7 +63,7 @@
             // |  __  |  __ |  __ |  __ |  __ |  __ |   |  -  |  =  |  [   |  ]  |  \   |   `   |
             // |  __  |  __ |  __ |  __ |  __ |  __ |   |  __ |  __ |  __  |  __ |  __  |   __  |
             // -----------------------------------------------------------------------------------
-            bindings = <
+            bindings = 
 &kp GRAVE &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp STAR &kp LPAR &kp RPAR &kp BSPC
 &trans    &trans   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT &kp RBKT &kp BSLH &kp GRAVE
 &trans    &trans   &trans &trans   &trans   &trans      &trans    &trans    &trans   &trans   &trans   &trans
@@ -71,4 +71,14 @@
             >;
         };
     };
+};
+
+/*
+ * pro_micro_serial (uart0) is disabled by default on nice!nano-pinout boards,
+ * since it isn't used for anything out of the box. It must be explicitly
+ * enabled here, or Zephyr never instantiates a device for it and the wired
+ * split driver fails to compile with an "undeclared __device_dts_ord_N" error.
+ */
+&pro_micro_serial {
+    status = "okay";
 };
