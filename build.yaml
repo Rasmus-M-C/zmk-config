@@ -1,4 +1,9 @@
 ---
+# As of ZMK's Zephyr 4.1 update (Dec 2025), "nice_nano_v2" is no longer a
+# valid standalone board name. It's now a revision of the "nice_nano" board:
+# nice_nano@2.0.0. That revision is also the default, so plain "nice_nano"
+# resolves to it too — but it's spelled out explicitly here to avoid ambiguity
+# if ZMK ever changes the default revision.
 include:
   - board: nice_nano@2.0.0
     shield: corne_left
