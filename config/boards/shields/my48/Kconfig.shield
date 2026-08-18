@@ -1,6 +1,0 @@
-config SHIELD_MY48
-    bool "My 48 keyboard shield"
-    depends on ARDUINO_PRO_MICRO
-    select HAS_NICE_VIEW_DISPLAY if NICE_VIEW
-    help
-      Enable support for My 48 keyboard shield.
